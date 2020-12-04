@@ -15,9 +15,7 @@ public class StringCalc {
 
         String[] splitNumbers = numbers.split(",");
         for (String splitNumber : splitNumbers) {
-            if (Integer.parseInt(splitNumber)<0) {
-                negativeNums += splitNumber;
-            }
+            if (Integer.parseInt(splitNumber)<0) negativeNums += splitNumber;
             if (Integer.parseInt(splitNumber)>1000) continue;
             theSum += Integer.parseInt(splitNumber);
         }
@@ -30,7 +28,7 @@ public class StringCalc {
     private String returnReformatedString(String numbers) {
         if (numbers.startsWith("//[")) {
             for (int i = numbers.indexOf("[") + 1; i < numbers.indexOf("]"); i++) {
-                delimiter = delimiter + numbers.substring(i, i + 1);
+                delimiter = delimiter + numbers.charAt(i);
             }
             numbers = numbers.substring(5 + delimiter.length());
             numbers = numbers.replace(delimiter, ",");
