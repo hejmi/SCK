@@ -25,5 +25,9 @@ public class StringCalcTest {
     public void returnsTheSumOfMultipleNumbersInput() {
         assertEquals(12, calc.add("2,2,2,2,4"));
     }
+    @Test
+    public void returnsTheSumAndHandlesNewLinesBetweenNumbers() {
+        assertEquals(6, calc.add("1\n2,3"));
+    }
 
 }

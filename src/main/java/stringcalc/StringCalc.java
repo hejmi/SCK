@@ -6,6 +6,9 @@ public class StringCalc {
         if (numbers.length()<1) {
             return 0;
         }
+
+        numbers = numbers.replace("\n",",");
+
         String[] splitNumbers = numbers.split(",");
         for (String splitNumber : splitNumbers) {
             theSum += Integer.parseInt(splitNumber);
