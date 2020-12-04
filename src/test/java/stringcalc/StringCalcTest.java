@@ -21,5 +21,9 @@ public class StringCalcTest {
     public void returnsTheSumOfSingleNumber() {
         assertEquals(9, calc.add("9"));
     }
+    @Test
+    public void returnsTheSumOfMultipleNumbersInput() {
+        assertEquals(12, calc.add("2,2,2,2,4"));
+    }
 
 }
