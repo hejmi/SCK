@@ -18,6 +18,7 @@ public class StringCalc {
             if (Integer.parseInt(splitNumber)<0) {
                 negativeNums += splitNumber;
             }
+            if (Integer.parseInt(splitNumber)>1000) continue;
             theSum += Integer.parseInt(splitNumber);
         }
         if (negativeNums.length()>0) {

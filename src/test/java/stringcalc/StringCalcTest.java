@@ -41,4 +41,8 @@ public class StringCalcTest {
     public void throwsExeptionWithNegativeNumbers() {
         assertThrows(IllegalArgumentException.class, ()->calc.add("2,-2,2,-6"));
     }
+    @Test
+    public void numbersBiggerThan1000WillBeIgnored() {
+        assertEquals(2, calc.add("2,1001"));
+    }
 }
