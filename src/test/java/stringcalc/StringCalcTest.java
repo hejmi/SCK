@@ -5,16 +5,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StringCalcTest {
-
+    StringCalc calc = new StringCalc();
     @Test
     public void checkIfClassExists() {
-        StringCalc calc = new StringCalc();
     }
     @Test
     public void returnsZeroIfStringIsEmpty() {
-        StringCalc calc = new StringCalc();
         assertEquals(0, calc.add(""));
     }
-
+    @Test
+    public void returnsTheSumOfInputNumbers() {
+        assertEquals(10, calc.add("9,1"));
+    }
 
 }
