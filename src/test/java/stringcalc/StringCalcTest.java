@@ -29,5 +29,8 @@ public class StringCalcTest {
     public void returnsTheSumAndHandlesNewLinesBetweenNumbers() {
         assertEquals(6, calc.add("1\n2,3"));
     }
-
+    @Test
+    public void returnsTheSumAndHandlesNewLinesBetweenNumbersAndComma() {
+        assertEquals(1, calc.add("1,\n"));
+    }
 }
