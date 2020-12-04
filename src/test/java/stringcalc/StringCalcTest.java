@@ -17,5 +17,9 @@ public class StringCalcTest {
     public void returnsTheSumOfInputNumbers() {
         assertEquals(10, calc.add("9,1"));
     }
+    @Test
+    public void returnsTheSumOfSingleNumber() {
+        assertEquals(9, calc.add("9"));
+    }
 
 }
