@@ -10,6 +10,11 @@ public class StringCalcTest {
     public void checkIfClassExists() {
         StringCalc calc = new StringCalc();
     }
+    @Test
+    public void returnsZeroIfStringIsEmpty() {
+        StringCalc calc = new StringCalc();
+        assertEquals(0, calc.add(""));
+    }
 
 
 }

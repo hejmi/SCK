@@ -6,3 +6,6 @@
 /jarRepositories.xml
 /misc.xml
 /vcs.xml
+/target/classes/stringcalc/StringCalc.class
+/target/test-classes/stringcalc/StringCalcTest.class
+/.idea/uiDesigner.xml
