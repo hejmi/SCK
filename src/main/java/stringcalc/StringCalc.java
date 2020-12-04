@@ -8,10 +8,7 @@ public class StringCalc {
         if (numbers.length()<1) {
             return 0;
         }
-
         numbers = returnReformatedString(numbers);
-
-        numbers = numbers.replace("\n",",");
 
         String[] splitNumbers = numbers.split(",");
         for (String splitNumber : splitNumbers) {
@@ -27,16 +24,35 @@ public class StringCalc {
 
     private String returnReformatedString(String numbers) {
         if (numbers.startsWith("//[")) {
-            for (int i = numbers.indexOf("[") + 1; i < numbers.indexOf("]"); i++) {
-                delimiter = delimiter + numbers.charAt(i);
+            if (numbers.indexOf("]") != numbers.lastIndexOf("]")) {
+                while(true) {
+                    delimiter = "";
+                    for (int i = numbers.indexOf("[")+1; i < numbers.indexOf("]"); i++) {
+                        delimiter = delimiter + numbers.charAt(i);
+                    }
+                    numbers = numbers.replace(delimiter, ",");
+                    if (numbers.indexOf("]") == numbers.lastIndexOf("]")) {
+                        break;
+                    } else {
+                        numbers = numbers.replace("[,]", "");
+                    }
+                }
+                numbers = numbers.replace("[,]", "");
+                numbers = numbers.substring(2);
+                numbers = numbers.replace("\n","");
+            } else {
+                for (int i = numbers.indexOf("[") + 1; i < numbers.indexOf("]"); i++) {
+                    delimiter = delimiter + numbers.charAt(i);
+                }
+                numbers = numbers.substring(5 + delimiter.length());
+                numbers = numbers.replace(delimiter, ",");
             }
-            numbers = numbers.substring(5 + delimiter.length());
-            numbers = numbers.replace(delimiter, ",");
         } else if (numbers.startsWith("//")) {
             String delimiter = numbers.substring(2, 3);
             numbers = numbers.replace(delimiter, ",");
             numbers = numbers.substring(4);
         }
+        numbers = numbers.replace("\n",",");
         return numbers;
     }
 }

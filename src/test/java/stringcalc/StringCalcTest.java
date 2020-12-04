@@ -49,4 +49,7 @@ public class StringCalcTest {
     public void acceptsAnyLengthOnDelimiter() {
         assertEquals(6, calc.add("//[***]\n1***2***3"));
     }
+    @Test
+    public void acceptsMultipleDelimitersWithAnyLength() { assertEquals(10, calc.add("//[g][***][;]\n4g1***2;3"));
+    }
 }
