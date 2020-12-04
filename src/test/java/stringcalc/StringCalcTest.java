@@ -37,4 +37,8 @@ public class StringCalcTest {
     public void returnsTheSumWithNewDelimiter(){
         assertEquals(12, calc.add("//;\n2;2;2;6"));
     }
+    @Test
+    public void throwsExeptionWithNegativeNumbers() {
+        assertThrows(IllegalArgumentException.class, ()->calc.add("2,-2,2,-6"));
+    }
 }

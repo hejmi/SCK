@@ -1,7 +1,9 @@
 package stringcalc;
 
 public class StringCalc {
-    public int theSum;
+    private int theSum;
+    private String negativeNums="";
+
     public int add(String numbers) {
         if (numbers.length()<1) {
             return 0;
@@ -13,7 +15,13 @@ public class StringCalc {
 
         String[] splitNumbers = numbers.split(",");
         for (String splitNumber : splitNumbers) {
+            if (Integer.parseInt(splitNumber)<0) {
+                negativeNums += splitNumber;
+            }
             theSum += Integer.parseInt(splitNumber);
+        }
+        if (negativeNums.length()>0) {
+            throw new IllegalArgumentException("Negatives not allowed: "+negativeNums);
         }
         return theSum;
     }
