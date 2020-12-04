@@ -33,4 +33,8 @@ public class StringCalcTest {
     public void returnsTheSumAndHandlesNewLinesBetweenNumbersAndComma() {
         assertEquals(1, calc.add("1,\n"));
     }
+    @Test
+    public void returnsTheSumWithNewDelimiter(){
+        assertEquals(12, calc.add("//;\n2;2;2;6"));
+    }
 }
